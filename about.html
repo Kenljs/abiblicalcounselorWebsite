@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — Biblical Counseling</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #FAF8F4;
+      --warm-white: #FFFFFF;
+      --dark: #1C1410;
+      --mid: #4A3F35;
+      --muted: #8A7E74;
+      --rule: #DDD8D0;
+      --accent: #6B4E2A;
+      --accent-light: #C9A87A;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Lato', sans-serif; background: var(--cream); color: var(--dark); font-weight: 300; }
+
+    header { background: var(--warm-white); border-bottom: 1px solid var(--rule); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 18px 24px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    .site-title { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 400; color: var(--dark); letter-spacing: 0.02em; line-height: 1.15; text-align: center; text-decoration: none; display: block; }
+    nav { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; justify-content: center; }
+    nav a { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); text-decoration: none; padding-bottom: 2px; border-bottom: 1.5px solid transparent; transition: color 0.2s, border-color 0.2s; }
+    nav a:hover, nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+    .page-hero { background: var(--dark); padding: 56px 24px; text-align: center; }
+    .page-hero .eyebrow { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-light); margin-bottom: 14px; }
+    .page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 400; color: #F5EAD9; line-height: 1.2; }
+    .page-hero h1 em { font-style: italic; color: var(--accent-light); }
+
+    /* BIO */
+    .bio-section { background: var(--warm-white); padding: 72px 24px; border-bottom: 1px solid var(--rule); }
+    .bio-inner { max-width: 820px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: start; }
+    .bio-photo { position: relative; }
+    .bio-photo img { width: 100%; display: block; border-radius: 2px; filter: saturate(0.9); }
+    .bio-photo::before { content: ''; position: absolute; top: -8px; left: -8px; right: 8px; bottom: 8px; border: 1px solid var(--accent-light); border-radius: 2px; opacity: 0.5; pointer-events: none; }
+    .bio-text h2 { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 400; color: var(--dark); margin-bottom: 6px; }
+    .bio-text .title-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; display: block; }
+    .bio-text p { font-size: 15px; line-height: 1.85; color: var(--mid); font-weight: 300; margin-bottom: 16px; }
+    .bio-quote { margin: 28px 0; padding: 18px 20px; border-left: 2px solid var(--accent-light); }
+    .bio-quote p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; color: var(--dark); line-height: 1.5; margin-bottom: 8px; }
+    .bio-quote cite { font-size: 12px; color: var(--muted); letter-spacing: 0.08em; }
+    .credentials { margin-top: 24px; display: flex; flex-direction: column; gap: 8px; }
+    .credential { font-size: 12px; color: var(--muted); padding-left: 14px; border-left: 2px solid var(--accent-light); line-height: 1.5; }
+
+    /* FAQ */
+    .faq-section { background: var(--cream); padding: 72px 24px; }
+    .faq-inner { max-width: 680px; margin: 0 auto; }
+    .faq-inner .eyebrow { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; font-weight: 700; }
+    .faq-inner h2 { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 400; color: var(--dark); margin-bottom: 48px; }
+    .faq-list { display: flex; flex-direction: column; gap: 0; }
+    .faq-item { border-top: 1px solid var(--rule); padding: 28px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--rule); }
+    .faq-item h3 { font-size: 13px; letter-spacing: 0.08em; font-weight: 700; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .faq-item p { font-size: 15px; line-height: 1.85; color: var(--mid); font-weight: 300; }
+    .faq-item a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-light); }
+    .faq-item a:hover { border-color: var(--accent); }
+
+    /* CTA */
+    .cta-section { background: var(--dark); padding: 64px 24px; text-align: center; }
+    .cta-section p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; color: rgba(245,234,217,0.85); margin-bottom: 28px; }
+    .btn-outline { display: inline-block; padding: 11px 32px; border: 1px solid var(--accent-light); color: var(--accent-light); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; font-weight: 400; transition: background 0.2s, color 0.2s; }
+    .btn-outline:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,0.07); padding: 40px 24px; text-align: center; }
+    .footer-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: rgba(255,255,255,0.85); font-weight: 400; margin-bottom: 16px; }
+    .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 28px; flex-wrap: wrap; }
+    .footer-links a { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent-light); }
+    .footer-rule { width: 40px; height: 1px; background: rgba(255,255,255,0.15); margin: 0 auto 20px; }
+    footer small { font-size: 11px; color: rgba(255,255,255,0.25); letter-spacing: 0.06em; }
+
+    @media (max-width: 640px) {
+      .site-title { font-size: 24px; }
+      .page-hero h1 { font-size: 28px; }
+      .bio-inner { grid-template-columns: 1fr; gap: 36px; }
+      .bio-photo { order: -1; }
+      .bio-photo::before { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-inner">
+      <a href="index.html" class="site-title">Biblical<br>Counseling</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="recommended-resources.html">Recommended Resources</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="eyebrow">About</div>
+    <h1>Loving help for hurting people<br><em>through God's truth</em></h1>
+  </div>
+
+  <section class="bio-section">
+    <div class="bio-inner">
+      <div class="bio-photo">
+        <!-- Replace with Lou's actual photo -->
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80" alt="Lou Samaritano" />
+      </div>
+      <div class="bio-text">
+        <h2>Lou Samaritano</h2>
+        <span class="title-label">Biblical Counselor</span>
+        <p>Lou is married to Tracey, and they have four children: Nicole, Patrick, Kate, and Anna. Lou and Tracey are natives of Long Island.</p>
+        <p>He has served in many areas of ministry since coming to Christ in 1997 — from leading music ministry to chaplaincy and pastoral ministry.</p>
+        <p>He believes that God's Word has the answers people need for life and godliness. He desires to help people live a joyful and fruitful life that pleases God.</p>
+        <div class="bio-quote">
+          <p>"To work with you for your joy."</p>
+          <cite>— 2 Corinthians 1:24</cite>
+        </div>
+        <div class="credentials">
+          <div class="credential">Master of Arts in Pastoral Ministry</div>
+          <div class="credential">Doctorate in Counseling</div>
+          <div class="credential">ACBC — Association of Certified Biblical Counselors</div>
+          <div class="credential">IABC — International Association of Biblical Counselors</div>
+          <div class="credential">CABC — Commissioned Addictions Biblical Counselor</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="faq-inner">
+      <div class="eyebrow">Commonly Asked Questions</div>
+      <h2>What to expect</h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <h3>What type of counseling is offered?</h3>
+          <p>Lou offers biblical and thoughtful counseling for challenges relating to marriage, premarital counseling, various addictions, phobia, fear, depression, anxiety, parenting, grief, aging concerns, and various other issues of life. Lou also brings his caring support to pastors and missionaries. God is all-wise and He has given us wise instruction and answers in the Bible that transcend other forms of counsel — our goal is to lovingly and prayerfully help people obtain those answers to live lives that please and honor God.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>When and where does counseling take place?</h3>
+          <p>Lou counsels in his Sayville office. Sessions are available by appointment Monday through Saturday, with daytime and evening hours available.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What does counseling cost?</h3>
+          <p>Individual sessions are $95. Marriage and family sessions are $120. A sliding scale is available by request.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How long is a counseling session?</h3>
+          <p>Generally 60–90 minutes.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How do I get started?</h3>
+          <p>Call Lou at <a href="tel:6313681831">631-368-1831</a> or email him at <a href="mailto:abiblicalcounselor@gmail.com">abiblicalcounselor@gmail.com</a> to set up an appointment. You're also welcome to use the <a href="contact.html">contact form</a>.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <p>"God promises to help and bless those who follow His instructions in the Bible."</p>
+    <a href="contact.html" class="btn-outline">Get in Touch</a>
+  </section>
+
+  <footer>
+    <div class="footer-title">Biblical Counseling</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="recommended-resources.html">Resources</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-rule"></div>
+    <small>&copy; 2026 Lou Samaritano &mdash; All rights reserved</small>
+  </footer>
+
+</body>
+</html>

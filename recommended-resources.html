@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recommended Resources — Biblical Counseling</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #FAF8F4;
+      --warm-white: #FFFFFF;
+      --dark: #1C1410;
+      --mid: #4A3F35;
+      --muted: #8A7E74;
+      --rule: #DDD8D0;
+      --accent: #6B4E2A;
+      --accent-light: #C9A87A;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Lato', sans-serif; background: var(--cream); color: var(--dark); font-weight: 300; }
+
+    header { background: var(--warm-white); border-bottom: 1px solid var(--rule); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 18px 24px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    .site-title { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 400; color: var(--dark); letter-spacing: 0.02em; line-height: 1.15; text-align: center; text-decoration: none; display: block; }
+    nav { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; justify-content: center; }
+    nav a { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); text-decoration: none; padding-bottom: 2px; border-bottom: 1.5px solid transparent; transition: color 0.2s, border-color 0.2s; }
+    nav a:hover, nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+    .page-hero { background: var(--dark); padding: 56px 24px; text-align: center; }
+    .page-hero .eyebrow { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-light); margin-bottom: 14px; }
+    .page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 400; color: #F5EAD9; line-height: 1.2; }
+    .page-hero p { max-width: 480px; margin: 16px auto 0; font-size: 15px; color: rgba(245,234,217,0.6); line-height: 1.7; font-weight: 300; }
+
+    /* RESOURCE SECTIONS */
+    .resources-section { background: var(--warm-white); padding: 72px 24px; border-bottom: 1px solid var(--rule); }
+    .resources-inner { max-width: 720px; margin: 0 auto; }
+    .section-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 12px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 400; color: var(--dark); margin-bottom: 40px; }
+
+    .resource-card { border-top: 1px solid var(--rule); padding: 28px 0; display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: start; }
+    .resource-card:last-child { border-bottom: 1px solid var(--rule); }
+    .resource-icon { width: 44px; height: 44px; border-radius: 2px; background: var(--cream); border: 1px solid var(--rule); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .resource-icon svg { width: 20px; height: 20px; stroke: var(--accent-light); fill: none; stroke-width: 1.5; }
+    .resource-body h3 { font-size: 16px; font-weight: 400; color: var(--dark); margin-bottom: 6px; }
+    .resource-body h3 a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-light); transition: border-color 0.2s; }
+    .resource-body h3 a:hover { border-color: var(--accent); }
+    .resource-body p { font-size: 14px; line-height: 1.8; color: var(--mid); font-weight: 300; }
+
+    /* ARTICLES */
+    .articles-section { background: var(--cream); padding: 72px 24px; }
+    .articles-inner { max-width: 720px; margin: 0 auto; }
+    .article-group { margin-bottom: 48px; }
+    .article-group:last-child { margin-bottom: 0; }
+    .article-category { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--rule); }
+    .article-link { display: flex; align-items: baseline; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--rule); text-decoration: none; group: true; }
+    .article-link:first-of-type { border-top: none; }
+    .article-link:hover .article-title { color: var(--accent); }
+    .article-arrow { font-size: 12px; color: var(--accent-light); flex-shrink: 0; transition: transform 0.2s; }
+    .article-link:hover .article-arrow { transform: translateX(3px); }
+    .article-title { font-size: 15px; color: var(--mid); font-weight: 300; line-height: 1.5; transition: color 0.2s; }
+    .article-source { font-size: 11px; color: var(--muted); margin-left: auto; flex-shrink: 0; letter-spacing: 0.06em; }
+
+    footer { background: var(--dark); padding: 40px 24px; text-align: center; }
+    .footer-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: rgba(255,255,255,0.85); font-weight: 400; margin-bottom: 16px; }
+    .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 28px; flex-wrap: wrap; }
+    .footer-links a { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent-light); }
+    .footer-rule { width: 40px; height: 1px; background: rgba(255,255,255,0.15); margin: 0 auto 20px; }
+    footer small { font-size: 11px; color: rgba(255,255,255,0.25); letter-spacing: 0.06em; }
+
+    @media (max-width: 640px) {
+      .site-title { font-size: 24px; }
+      .page-hero h1 { font-size: 28px; }
+      .resource-card { grid-template-columns: 1fr; gap: 12px; }
+      .article-source { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-inner">
+      <a href="index.html" class="site-title">Biblical<br>Counseling</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="recommended-resources.html" class="active">Recommended Resources</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="eyebrow">Resources</div>
+    <h1>Recommended Resources</h1>
+    <p>Trusted ministries, articles, and tools to help you grow in faith and find answers rooted in God's Word.</p>
+  </div>
+
+  <section class="resources-section">
+    <div class="resources-inner">
+      <div class="section-label">Recommended Ministries</div>
+      <div class="section-title">Trusted websites &amp; organizations</div>
+
+      <div class="resource-card">
+        <div class="resource-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div class="resource-body">
+          <h3><a href="https://9marks.org" target="_blank" rel="noopener">9Marks — 9marks.org</a></h3>
+          <p>A ministry dedicated to equipping church leaders with a biblical vision and practical resources for displaying God's glory to the nations through healthy churches.</p>
+        </div>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div class="resource-body">
+          <h3><a href="https://tgc.com" target="_blank" rel="noopener">The Gospel Coalition — TGC.com</a></h3>
+          <p>TGC contains many great articles and resources for Christians seeking to understand and apply the gospel to every area of life.</p>
+        </div>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div class="resource-body">
+          <h3><a href="https://desiringgod.org" target="_blank" rel="noopener">Desiring God — desiringgod.org</a></h3>
+          <p>"God is most glorified in us when we are most satisfied in Him." This ministry exists to help people everywhere understand and embrace this truth, making the glory of God and the goodness of joy the foundation of everything they do.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="articles-section">
+    <div class="articles-inner">
+      <div class="section-label">Recommended Articles</div>
+      <div class="section-title">Helpful reading</div>
+
+      <div class="article-group">
+        <div class="article-category">Contentment</div>
+
+        <a class="article-link" href="http://www.crosswalk.com/family/marriage/contentment-a-key-to-keeping-your-love-alive-11602836.html" target="_blank" rel="noopener">
+          <span class="article-arrow">→</span>
+          <span class="article-title">Contentment: A Key to Keeping Your Love Alive</span>
+          <span class="article-source">Crosswalk.com</span>
+        </a>
+
+        <a class="article-link" href="https://www.reviveourhearts.com/true-woman/blog/5-things-not-to-do-in-your-marriage/" target="_blank" rel="noopener">
+          <span class="article-arrow">→</span>
+          <span class="article-title">5 Things Not to Do in Your Marriage</span>
+          <span class="article-source">Revive Our Hearts</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-title">Biblical Counseling</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="recommended-resources.html">Resources</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-rule"></div>
+    <small>&copy; 2026 Lou Samaritano &mdash; All rights reserved</small>
+  </footer>
+
+</body>
+</html>
