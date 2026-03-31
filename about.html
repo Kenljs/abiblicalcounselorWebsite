@@ -13,6 +13,7 @@
       --cream: #FAF8F4;
       --warm-white: #FFFFFF;
       --dark: #1C1410;
+      --navy: #0F2044;
       --mid: #4A3F35;
       --muted: #8A7E74;
       --rule: #DDD8D0;
@@ -20,65 +21,62 @@
       --accent-light: #C9A87A;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Lato', sans-serif; background: var(--cream); color: var(--dark); font-weight: 300; }
+    body { font-family: 'Lato', sans-serif; background: var(--cream); color: var(--dark); font-weight: 300; font-size: 17px; }
 
     header { background: var(--warm-white); border-bottom: 1px solid var(--rule); position: sticky; top: 0; z-index: 100; }
-    .nav-inner { max-width: 900px; margin: 0 auto; padding: 18px 24px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
-    .site-title { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 400; color: var(--dark); letter-spacing: 0.02em; line-height: 1.15; text-align: center; text-decoration: none; display: block; }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 20px 24px 16px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    .site-title { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 400; color: var(--dark); letter-spacing: 0.02em; line-height: 1.15; text-align: center; text-decoration: none; display: block; }
     nav { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; justify-content: center; }
-    nav a { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); text-decoration: none; padding-bottom: 2px; border-bottom: 1.5px solid transparent; transition: color 0.2s, border-color 0.2s; }
+    nav a { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); text-decoration: none; padding-bottom: 2px; border-bottom: 1.5px solid transparent; transition: color 0.2s, border-color 0.2s; }
     nav a:hover, nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
 
     .page-hero { background: var(--dark); padding: 56px 24px; text-align: center; }
-    .page-hero .eyebrow { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-light); margin-bottom: 14px; }
-    .page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 400; color: #F5EAD9; line-height: 1.2; }
+    .page-hero .eyebrow { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-light); margin-bottom: 14px; }
+    .page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 400; color: #F5EAD9; line-height: 1.2; }
     .page-hero h1 em { font-style: italic; color: var(--accent-light); }
 
-    /* BIO */
     .bio-section { background: var(--warm-white); padding: 72px 24px; border-bottom: 1px solid var(--rule); }
     .bio-inner { max-width: 820px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: start; }
     .bio-photo { position: relative; }
     .bio-photo img { width: 100%; display: block; border-radius: 2px; filter: saturate(0.9); }
     .bio-photo::before { content: ''; position: absolute; top: -8px; left: -8px; right: 8px; bottom: 8px; border: 1px solid var(--accent-light); border-radius: 2px; opacity: 0.5; pointer-events: none; }
-    .bio-text h2 { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 400; color: var(--dark); margin-bottom: 6px; }
-    .bio-text .title-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; display: block; }
-    .bio-text p { font-size: 15px; line-height: 1.85; color: var(--mid); font-weight: 300; margin-bottom: 16px; }
+    .bio-text h2 { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 400; color: var(--dark); margin-bottom: 6px; }
+    .bio-text .title-label { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; display: block; }
+    .bio-text p { font-size: 17px; line-height: 1.85; color: var(--mid); font-weight: 300; margin-bottom: 16px; }
     .bio-quote { margin: 28px 0; padding: 18px 20px; border-left: 2px solid var(--accent-light); }
-    .bio-quote p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; color: var(--dark); line-height: 1.5; margin-bottom: 8px; }
-    .bio-quote cite { font-size: 12px; color: var(--muted); letter-spacing: 0.08em; }
+    .bio-quote p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; color: var(--dark); line-height: 1.5; margin-bottom: 8px; }
+    .bio-quote cite { font-size: 13px; color: var(--muted); letter-spacing: 0.08em; }
     .credentials { margin-top: 24px; display: flex; flex-direction: column; gap: 8px; }
-    .credential { font-size: 12px; color: var(--muted); padding-left: 14px; border-left: 2px solid var(--accent-light); line-height: 1.5; }
+    .credential { font-size: 14px; color: var(--muted); padding-left: 14px; border-left: 2px solid var(--accent-light); line-height: 1.5; }
 
-    /* FAQ */
     .faq-section { background: var(--cream); padding: 72px 24px; }
     .faq-inner { max-width: 680px; margin: 0 auto; }
-    .faq-inner .eyebrow { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; font-weight: 700; }
-    .faq-inner h2 { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 400; color: var(--dark); margin-bottom: 48px; }
+    .faq-inner .eyebrow { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; font-weight: 700; }
+    .faq-inner h2 { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 400; color: var(--dark); margin-bottom: 48px; }
     .faq-list { display: flex; flex-direction: column; gap: 0; }
     .faq-item { border-top: 1px solid var(--rule); padding: 28px 0; }
     .faq-item:last-child { border-bottom: 1px solid var(--rule); }
     .faq-item h3 { font-size: 13px; letter-spacing: 0.08em; font-weight: 700; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
-    .faq-item p { font-size: 15px; line-height: 1.85; color: var(--mid); font-weight: 300; }
+    .faq-item p { font-size: 17px; line-height: 1.85; color: var(--mid); font-weight: 300; }
     .faq-item a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-light); }
     .faq-item a:hover { border-color: var(--accent); }
 
-    /* CTA */
     .cta-section { background: var(--dark); padding: 64px 24px; text-align: center; }
-    .cta-section p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; color: rgba(245,234,217,0.85); margin-bottom: 28px; }
-    .btn-outline { display: inline-block; padding: 11px 32px; border: 1px solid var(--accent-light); color: var(--accent-light); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; font-weight: 400; transition: background 0.2s, color 0.2s; }
+    .cta-section p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 24px; color: rgba(245,234,217,0.85); margin-bottom: 28px; }
+    .btn-outline { display: inline-block; padding: 13px 36px; border: 1px solid var(--accent-light); color: var(--accent-light); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; font-weight: 400; transition: background 0.2s, color 0.2s; }
     .btn-outline:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
 
-    footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,0.07); padding: 40px 24px; text-align: center; }
-    .footer-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: rgba(255,255,255,0.85); font-weight: 400; margin-bottom: 16px; }
+    footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,0.07); padding: 40px 24px; text-align: center; }
+    .footer-title { font-family: 'Cormorant Garamond', serif; font-size: 30px; color: rgba(255,255,255,0.85); font-weight: 400; margin-bottom: 16px; }
     .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 28px; flex-wrap: wrap; }
-    .footer-links a { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+    .footer-links a { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: var(--accent-light); }
     .footer-rule { width: 40px; height: 1px; background: rgba(255,255,255,0.15); margin: 0 auto 20px; }
-    footer small { font-size: 11px; color: rgba(255,255,255,0.25); letter-spacing: 0.06em; }
+    footer small { font-size: 12px; color: rgba(255,255,255,0.25); letter-spacing: 0.06em; }
 
     @media (max-width: 640px) {
-      .site-title { font-size: 24px; }
-      .page-hero h1 { font-size: 28px; }
+      .site-title { font-size: 30px; }
+      .page-hero h1 { font-size: 30px; }
       .bio-inner { grid-template-columns: 1fr; gap: 36px; }
       .bio-photo { order: -1; }
       .bio-photo::before { display: none; }
@@ -107,7 +105,6 @@
   <section class="bio-section">
     <div class="bio-inner">
       <div class="bio-photo">
-        <!-- Replace with Lou's actual photo -->
         <img src="LouSelfPict.jpeg" alt="Lou Samaritano" />
       </div>
       <div class="bio-text">
@@ -159,7 +156,7 @@
 
         <div class="faq-item">
           <h3>How do I get started?</h3>
-          <p>Call Lou at <a href="tel:6313681831">631-368-1831</a> or email him at <a href="mailto:abiblicalcounselor@gmail.com">abiblicalcounselor@gmail.com</a> to set up an appointment. </p>
+          <p>Call Lou at <a href="tel:6313681831">631-368-1831</a> or email him at <a href="mailto:abiblicalcounselor@gmail.com">abiblicalcounselor@gmail.com</a> to set up an appointment.</p>
         </div>
 
       </div>
